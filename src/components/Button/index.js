@@ -6,7 +6,7 @@ import React from "react";
  * A custom Button
  *
  */
-const MyButton = ({ children, ...rest }) =>
+const MyButton = ({ children, primary, ...rest }) =>
   (<Button {...rest}>{children}</Button>);
 
 export default ButtonStyle(MyButton);

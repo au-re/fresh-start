@@ -2,7 +2,7 @@
 
 exports[`Button renders without children 1`] = `
 <MyButton
-  className="sc-bdVaJa UoSJW"
+  className="sc-bdVaJa fvZRzy"
 >
   <span>
     test
@@ -12,6 +12,6 @@ exports[`Button renders without children 1`] = `
 
 exports[`Button renders without props 1`] = `
 <MyButton
-  className="sc-bdVaJa UoSJW"
+  className="sc-bdVaJa fvZRzy"
 />
 `;
