@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders without children 1`] = `
+<MyButton
+  className="sc-bdVaJa UoSJW"
+>
+  <span>
+    test
+  </span>
+</MyButton>
+`;
+
+exports[`Button renders without props 1`] = `
+<MyButton
+  className="sc-bdVaJa UoSJW"
+/>
+`;

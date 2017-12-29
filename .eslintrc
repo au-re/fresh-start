@@ -1,0 +1,75 @@
+{
+  "env": {
+    "es6": true,
+    "commonjs": true,
+    "browser": true,
+    "jest": true,
+    "node": true,
+    "mocha": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "react-app"
+  ],
+  "rules": {
+    "arrow-body-style": [
+      "warn",
+      "as-needed"
+    ],
+    "arrow-parens": "warn",
+    "arrow-spacing": "warn",
+    "camelcase": "warn",
+    "comma-dangle": "off",
+    "consistent-this": "warn",
+    "eol-last": [
+      "warn",
+      "unix"
+    ],
+    "func-names": "warn",
+    "handle-callback-err": "warn",
+    "key-spacing": "warn",
+    "max-depth": "error",
+    "max-len": "off",
+    "max-lines": "error",
+    "max-statements-per-line": "warn",
+    "no-console": "warn",
+    "no-continue": "error",
+    "no-duplicate-imports": "error",
+    "no-else-return": "warn",
+    "no-floating-decimal": "warn",
+    "no-lonely-if": "warn",
+    "no-loop-func": "error",
+    "no-multiple-empty-lines": [
+      "warn",
+      {
+        "max": 2
+      }
+    ],
+    "no-tabs": "warn",
+    "no-trailing-spaces": "warn",
+    "no-useless-call": "warn",
+    "no-useless-rename": "warn",
+    "no-useless-return": "warn",
+    "no-var": "error",
+    "no-void": "error",
+    "no-whitespace-before-property": "warn",
+    "object-curly-spacing": "off",
+    "object-shorthand": "warn",
+    "operator-linebreak": [
+      "warn",
+      "before"
+    ],
+    "prefer-arrow-callback": "warn",
+    "prefer-const": "warn",
+    "quotes": [
+      "warn",
+      "double",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": "warn",
+    "space-before-function-paren": "off",
+    "yoda": "warn"
+  }
+}
