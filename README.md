@@ -6,4 +6,8 @@ Fresh Start
 A boilerplate with all the best practises gathered along the way.
 
 - React and Redux
+- Selectors, Thunks
+- Redux Resource
+- React Router
+- Styled Components
 - Inspired by 'Isomorphic'
