@@ -1,8 +1,9 @@
-import _ from "lodash";
-import { actionTypes, getStatus, requestStatuses } from "redux-resource";
+import { actionTypes, getStatus } from "redux-resource";
+import { reset } from "redux-resource-plugins";
 import request from "superagent";
 
-// thunk
+export const resetTodos = () => reset.resetResource("todos");
+
 export const fetchTodos = () => async (dispatch, getState) => {
   const status = getStatus(getState(), "todos.requests.fetchTodos.status");
   if (status.succeeded || status.pending) return;
@@ -26,19 +27,19 @@ export const fetchTodos = () => async (dispatch, getState) => {
       type: actionTypes.READ_RESOURCES_FAILED,
       resourceName: "todos",
       request: "fetchTodos",
-      error
+      statusCode: error.response.status
     });
   }
 };
 
 export const fetchTodoById = (id) => async (dispatch, getState) => {
-  const status = _.get(getState(), `todos.meta.${id}.readStatus`);
-  if (status === requestStatuses.PENDING || status === requestStatuses.SUCCEEDED) return;
+  const status = getStatus(getState(), `todos.meta.${id}.readStatus`);
+  if (status.succeeded || status.pending) return;
   try {
     dispatch({
       type: actionTypes.READ_RESOURCES_PENDING,
       resourceName: "todos",
-      request: "fetchTodosById"
+      resources: [id]
     });
     const { body } = await request
       .get(`https://jsonplaceholder.typicode.com/todos/${id}`)
@@ -46,14 +47,14 @@ export const fetchTodoById = (id) => async (dispatch, getState) => {
     dispatch({
       type: actionTypes.READ_RESOURCES_SUCCEEDED,
       resourceName: "todos",
-      request: "fetchTodosById",
       resources: [body]
     });
-  } catch (err) {
+  } catch (error) {
     dispatch({
       type: actionTypes.READ_RESOURCES_FAILED,
       resourceName: "todos",
-      request: "fetchTodosById"
+      resources: [id],
+      statusCode: error.response.status
     });
   }
 };
