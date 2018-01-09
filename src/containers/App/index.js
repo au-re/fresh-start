@@ -20,17 +20,17 @@ const mapDispatchToProps = (dispatch) =>
 class App extends Component {
 
   async componentDidMount() {
-    const { fetchTodoById } = this.props;
+    const { fetchTodoById = () => { } } = this.props;
     await fetchTodoById(1);
   }
 
   render() {
-    const { status, className, todos } = this.props;
+    const { status = {}, className, todos = [], fetchTodos = () => { } } = this.props;
     return (
       <div className={className}>
         {status.pending && <p>loading</p>}
         {!status.pending && status.failed && <p>error</p>}
-        <Button primary onClick={() => fetchTodoById(10)}>fetch todos</Button>
+        <Button primary onClick={() => fetchTodos()}>fetch todos</Button>
         {
           !status.failed && todos.map((todo) =>
             (<Card bordered={false} title={todo.title} extra={<a href="#">More</a>}></Card>))
@@ -40,4 +40,4 @@ class App extends Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(styled(App));
-export { reducer };
+export { reducer, App };
