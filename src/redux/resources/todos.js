@@ -10,7 +10,7 @@ export const fetchTodos = () => async (dispatch, getState) => {
   try {
     dispatch({
       type: actionTypes.READ_RESOURCES_PENDING,
-      resourceName: "todos",
+      resourceType: "todos",
       request: "fetchTodos",
     });
     const { body } = await request
@@ -18,14 +18,14 @@ export const fetchTodos = () => async (dispatch, getState) => {
       .accept("application/json");
     dispatch({
       type: actionTypes.READ_RESOURCES_SUCCEEDED,
-      resourceName: "todos",
+      resourceType: "todos",
       request: "fetchTodos",
       resources: body,
     });
   } catch (error) {
     dispatch({
       type: actionTypes.READ_RESOURCES_FAILED,
-      resourceName: "todos",
+      resourceType: "todos",
       request: "fetchTodos",
       statusCode: error.response.status,
     });
@@ -38,7 +38,7 @@ export const fetchTodoById = (id) => async (dispatch, getState) => {
   try {
     dispatch({
       type: actionTypes.READ_RESOURCES_PENDING,
-      resourceName: "todos",
+      resourceType: "todos",
       resources: [id],
     });
     const { body } = await request
@@ -46,13 +46,13 @@ export const fetchTodoById = (id) => async (dispatch, getState) => {
       .accept("application/json");
     dispatch({
       type: actionTypes.READ_RESOURCES_SUCCEEDED,
-      resourceName: "todos",
+      resourceType: "todos",
       resources: [body],
     });
   } catch (error) {
     dispatch({
       type: actionTypes.READ_RESOURCES_FAILED,
-      resourceName: "todos",
+      resourceType: "todos",
       resources: [id],
       statusCode: error.response.status,
     });

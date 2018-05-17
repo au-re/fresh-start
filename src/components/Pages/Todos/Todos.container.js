@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getResources, getStatus } from "redux-resource";
 
-import Todos from "../../components/Pages/Todos";
-import { fetchTodoById } from "../../redux/resources";
+import { fetchTodoById } from "../../../redux/resources/todos";
+import Todos from "../Todos/Todos";
 
 const mapStateToProps = (state) => ({
   todos: getResources(state.todos, () => true),

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
-import Button from "../../Button";
+import Button from "../../Button/Button";
 
 class Landing extends Component {
   render() {
     const { className } = this.props;
+
     return (
       <div className={className}>
         landing page

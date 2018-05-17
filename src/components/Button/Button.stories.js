@@ -2,7 +2,7 @@ import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 import React, { Fragment } from "react";
 
-import Button from "./index";
+import Button from "./Button";
 
 storiesOf("Button", module)
 

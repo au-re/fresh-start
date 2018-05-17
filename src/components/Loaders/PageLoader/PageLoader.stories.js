@@ -2,7 +2,7 @@ import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 
-import PageLoader from "./index";
+import PageLoader from "./PageLoader";
 
 storiesOf("PageLoader", module)
 

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders as primary button 1`] = `
+<styled.button
+  primary={true}
+/>
+`;
+
+exports[`Button renders without children 1`] = `
+<styled.button>
+  <span>
+    test
+  </span>
+</styled.button>
+`;
+
+exports[`Button renders without props 1`] = `<styled.button />`;
