@@ -13,7 +13,7 @@ const middlewares = [thunk, routeMiddleware];
 const store = createStore(
   combineReducers({
     ...reducers,
-    router: routerReducer
+    router: routerReducer,
   }),
   composeWithDevTools(applyMiddleware(...middlewares)));
 

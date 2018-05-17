@@ -1,12 +1,19 @@
-import Button from "antd/lib/button";
-import ButtonStyle from "./Button.style";
-import React from "react";
+import styled from "styled-components";
 
-/**
- * A custom Button
- *
- */
-const MyButton = ({ children, primary, ...rest }) =>
-  (<Button {...rest}>{children}</Button>);
+/* The hello world of components: A custom Button */
 
-export default ButtonStyle(MyButton);
+export default styled.button`
+  background: ${(props) => (props.primary ? "palevioletred" : "white")};
+  color: ${(props) => (props.primary ? "white" : "palevioletred")};
+  font-size: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s all;
+
+  :hover {
+    background: ${(props) => (props.primary ? "white" : "")};
+    color: palevioletred;
+  }
+`;

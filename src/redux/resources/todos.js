@@ -11,7 +11,7 @@ export const fetchTodos = () => async (dispatch, getState) => {
     dispatch({
       type: actionTypes.READ_RESOURCES_PENDING,
       resourceName: "todos",
-      request: "fetchTodos"
+      request: "fetchTodos",
     });
     const { body } = await request
       .get("https://jsonplaceholder.typicode.com/todos")
@@ -20,14 +20,14 @@ export const fetchTodos = () => async (dispatch, getState) => {
       type: actionTypes.READ_RESOURCES_SUCCEEDED,
       resourceName: "todos",
       request: "fetchTodos",
-      resources: body
+      resources: body,
     });
   } catch (error) {
     dispatch({
       type: actionTypes.READ_RESOURCES_FAILED,
       resourceName: "todos",
       request: "fetchTodos",
-      statusCode: error.response.status
+      statusCode: error.response.status,
     });
   }
 };
@@ -39,7 +39,7 @@ export const fetchTodoById = (id) => async (dispatch, getState) => {
     dispatch({
       type: actionTypes.READ_RESOURCES_PENDING,
       resourceName: "todos",
-      resources: [id]
+      resources: [id],
     });
     const { body } = await request
       .get(`https://jsonplaceholder.typicode.com/todos/${id}`)
@@ -47,14 +47,14 @@ export const fetchTodoById = (id) => async (dispatch, getState) => {
     dispatch({
       type: actionTypes.READ_RESOURCES_SUCCEEDED,
       resourceName: "todos",
-      resources: [body]
+      resources: [body],
     });
   } catch (error) {
     dispatch({
       type: actionTypes.READ_RESOURCES_FAILED,
       resourceName: "todos",
       resources: [id],
-      statusCode: error.response.status
+      statusCode: error.response.status,
     });
   }
 };
