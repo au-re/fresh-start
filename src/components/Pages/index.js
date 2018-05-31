@@ -12,6 +12,6 @@ export const Landing = Loadable({
 });
 
 export const Todos = Loadable({
-  loader: () => import("./Todos/Todos.container"),
+  loader: () => import("./Todos/Todos"),
   loading: () => <PageLoader />,
 });

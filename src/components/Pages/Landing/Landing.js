@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import Button from "../../Button/Button";
-
 const LandingTitle = styled.h1`
   color: white;
   text-align: center;
@@ -22,8 +20,6 @@ const LandingLink = styled(Link) `
 
 const LandingHeader = styled.div`
   padding: 2rem;
-
-
 `;
 
 class Landing extends Component {
