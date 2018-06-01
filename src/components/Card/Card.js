@@ -7,31 +7,21 @@ const titletransition = keyframes`
 `;
 
 const CardTitle = styled.div`
-  /* text-transform: uppercase; */
   animation: ${titletransition} 0.25s ease-in-out forwards;
   font-weight: bold;
   font-size: 14px;
 `;
 
 class Card extends Component {
-
-  drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
-
   render() {
-    const { className, title } = this.props;
+    const { className, children, title } = this.props;
     return (
-      <div className={className} draggable="true">
+      <div className={className}>
         <CardTitle>{title}</CardTitle>
+        {children}
       </div>);
   }
 }
-
-const transitionIn = keyframes`
-  from {opacity: 0;}
-  to {opacity: 1;}
-`;
 
 export default styled(Card) `
   cursor: grab;
@@ -40,10 +30,8 @@ export default styled(Card) `
   font-size: 1rem;
   padding: 1rem;
   border-radius: 4px;
-  opacity: 0;
+  opacity: 1;
   overflow: hidden;
-  animation: ${transitionIn} 0.5s ease-in-out forwards;
-  /* animation-delay: ${(props) => props.delay * 0.05}s; */
   display: grid;
   min-height: 60px;
   box-shadow: 0 1px 1px 0 rgba(60,64,67,.08),0 1px 3px 1px rgba(60,64,67,.16);
@@ -55,12 +43,5 @@ export default styled(Card) `
   :hover {
     background: #ea8b00;
     color: #FFF;
-  }
-
-  :active {
-    cursor: grabbing;
-    z-index: 10;
-    transform: scaleX(1.05) scaleY(1.2);
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
   }
 `;

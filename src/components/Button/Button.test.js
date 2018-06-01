@@ -1,22 +1,24 @@
-import Enzyme from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import "jest-styled-components";
+
 import React from "react";
+import renderer from "react-test-renderer";
 
 import Button from "./Button";
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe("Button", () => {
 
   it("renders without props", () => {
-    expect(<Button />).toMatchSnapshot();
+    const tree = renderer.create(<Button />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
   it("renders as primary button", () => {
-    expect(<Button primary />).toMatchSnapshot();
+    const tree = renderer.create(<Button primary />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
-  it("renders without children", () => {
-    expect(<Button><span>test</span></Button>).toMatchSnapshot();
+  it("renders children", () => {
+    const tree = renderer.create(<Button><span>test</span></Button>).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

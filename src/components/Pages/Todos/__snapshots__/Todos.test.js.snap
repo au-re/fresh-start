@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Todos renders without props 1`] = `
-<Todos
-  fetchTodoById={[Function]}
-/>
-`;

@@ -1,14 +1,15 @@
-import Enzyme from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import "jest-styled-components";
+
 import React from "react";
+import { MemoryRouter } from "react-router";
+import renderer from "react-test-renderer";
 
 import Landing from "./Landing";
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe("Landing", () => {
 
   it("renders without props", () => {
-    expect(<Landing />).toMatchSnapshot();
+    const tree = renderer.create(<MemoryRouter><Landing /></MemoryRouter>).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

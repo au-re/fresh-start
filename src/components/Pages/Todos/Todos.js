@@ -1,61 +1,94 @@
 import { message } from "antd";
-import PropTypes from "prop-types";
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { getResources, getStatus } from "redux-resource";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
+import request from "superagent";
 
-import { fetchTodos } from "../../../redux/resources/todos";
 import Card from "../../Card/Card";
 import CardList from "../../CardList/CardList";
 
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
 class Todos extends Component {
 
-  static defaultProps = {
-    fetchTodos: () => { },
+  state = {
     todos: [],
-  };
-
-  static propTypes = {
-    todos: PropTypes.array,
-    fetchTodos: PropTypes.func,
-  };
+  }
 
   async componentDidMount() {
-    const { fetchTodos } = this.props;
     try {
-      await fetchTodos();
+      const { body } = await request
+        .get("https://jsonplaceholder.typicode.com/posts")
+        .accept("application/json");
+
+      this.setState({ todos: body });
     } catch (error) {
       message.error("something went wrong");
     }
   }
 
+  onDragEnd = (result) => {
+    const { todos } = this.state;
+
+    // dropped outside the list
+    if (!result.destination) {
+      return;
+    }
+
+    const reorderedTodos = reorder(
+      todos,
+      result.source.index,
+      result.destination.index,
+    );
+
+    this.setState({
+      todos: reorderedTodos,
+    });
+  }
+
   render() {
-    const { className, todos } = this.props;
+    const { className } = this.props;
+    const { todos } = this.state;
     return (
       <div className={className}>
-        <CardList>
-          {
-            todos.map((todo, idx) =>
-              <Card key={idx} delay={idx} title={todo.title}>hello world</Card>)
-          }
-        </CardList>
+        <DragDropContext onDragEnd={this.onDragEnd}>
+          <Droppable droppableId="droppable">
+            {
+              (provided, snapshot) => (
+                <div ref={provided.innerRef}>
+                  <CardList>
+                    {
+                      todos.map((todo, idx) =>
+                        <Draggable key={todo.id} draggableId={todo.id} index={idx}>
+                          {
+                            (provided, snapshot) => (
+                              <div
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}>
+                                <Card title={todo.title} />
+                              </div>)
+                          }
+                        </Draggable>)
+                    }
+                    {provided.placeholder}
+                  </CardList>
+                </div>)
+            }
+          </Droppable>
+        </DragDropContext>
+
       </div>);
   }
 }
 
-const styledTodos = styled(Todos) `
-  min-height: 100%;
-  background: #ffad36;
-`;
-
-const mapStateToProps = (state) => ({
-  todos: getResources(state.todos, () => true),
-  status: getStatus(state, "todos.requests.fetchTodos.status"),
-});
-
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ fetchTodos }, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(styledTodos);
+export default styled(Todos) `
+      min-height: 100%;
+      background: #ffad36;
+    `;

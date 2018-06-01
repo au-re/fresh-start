@@ -1,3 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Landing renders without props 1`] = `<Landing />`;
+exports[`Landing renders without props 1`] = `
+.c2 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.c1 {
+  color: white;
+  font-size: 1rem;
+}
+
+.c1:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: white;
+}
+
+.c0 {
+  background: tomato;
+  color: white;
+  height: 100%;
+  display: grid;
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <a
+      className="c1"
+      href="todos"
+      onClick={[Function]}
+    >
+      todos
+    </a>
+  </div>
+  <h1
+    className="c2"
+  >
+    I'm just a Boilerplate
+  </h1>
+</div>
+`;

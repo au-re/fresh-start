@@ -1,12 +1,14 @@
+import "jest-styled-components";
+
 import React from "react";
 import renderer from "react-test-renderer";
 
-import PageLoader from "./PageLoader";
+import Card from "./Card";
 
-describe("PageLoader", () => {
+describe("Card", () => {
 
   it("renders without props", () => {
-    const tree = renderer.create(<PageLoader />).toJSON();
+    const tree = renderer.create(<Card />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
