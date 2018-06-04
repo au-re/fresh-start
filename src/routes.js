@@ -1,6 +1,7 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
+import Grid from "./components/Pages/Grid/Grid";
 import Landing from "./components/Pages/Landing/LoadableLanding";
 import Todos from "./components/Pages/Todos/LoadableTodos";
 
@@ -16,7 +17,11 @@ const Routes = () => (
       exact
       path="/todos"
       component={Todos} />
-    <Route component={() => <Redirect to="/404" />} />
+    <Route
+      exact
+      path="/grid"
+      component={Grid} />
+    <Route component={() => <div>404</div>} />
   </Switch>);
 
 export default Routes;

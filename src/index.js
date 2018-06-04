@@ -16,6 +16,7 @@ ReactDOM.render(
       <Menu style={{ position: "fixed" }}>
         <MenuLink to="/">landing page</MenuLink>
         <MenuLink to="todos">todos</MenuLink>
+        <MenuLink to="grid">grid</MenuLink>
       </Menu>
       <Routes />
     </Fragment>
