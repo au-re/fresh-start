@@ -4,8 +4,9 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import request from "superagent";
 
-import Card from "../../Card/Card";
 import CardList from "../../CardList/CardList";
+
+const { Card } = CardList;
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -34,22 +35,17 @@ class Todos extends Component {
   }
 
   onDragEnd = (result) => {
-    const { todos } = this.state;
-
     // dropped outside the list
-    if (!result.destination) {
-      return;
-    }
+    if (!result.destination) return;
 
+    const { todos } = this.state;
     const reorderedTodos = reorder(
       todos,
       result.source.index,
       result.destination.index,
     );
 
-    this.setState({
-      todos: reorderedTodos,
-    });
+    this.setState({ todos: reorderedTodos });
   }
 
   render() {

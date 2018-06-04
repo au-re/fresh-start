@@ -1,7 +1,8 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 
-import { Landing, Todos } from "./components/Pages";
+import Landing from "./components/Pages/Landing/LoadableLanding";
+import Todos from "./components/Pages/Todos/LoadableTodos";
 
 /* Application Routes */
 

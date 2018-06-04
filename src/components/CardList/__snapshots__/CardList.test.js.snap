@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardList renders without props 1`] = `
+.c0 {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.c0 > div {
+  margin: 6px 0;
+}
+
+.c0 :first-child {
+  margin-top: 0;
+}
+
+<div
+  className="c0"
+/>
+`;

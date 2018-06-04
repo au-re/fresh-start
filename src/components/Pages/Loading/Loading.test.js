@@ -1,12 +1,14 @@
+import "jest-styled-components";
+
 import React from "react";
 import renderer from "react-test-renderer";
 
-import PageLoader from "./PageLoader";
+import Loading from "./Loading";
 
-describe("PageLoader", () => {
+describe("Loading", () => {
 
   it("renders without props", () => {
-    const tree = renderer.create(<PageLoader />).toJSON();
+    const tree = renderer.create(<Loading />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
