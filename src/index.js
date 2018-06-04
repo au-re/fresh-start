@@ -1,15 +1,24 @@
 import "./globalStyles";
 
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
+import Menu from "./components/Menu/Menu";
 import registerServiceWorker from "./registerServiceWorker";
 import Routes from "./routes";
 
+const { MenuLink } = Menu;
+
 ReactDOM.render(
   <BrowserRouter>
-    <Routes />
+    <Fragment>
+      <Menu style={{ position: "fixed" }}>
+        <MenuLink to="/">landing page</MenuLink>
+        <MenuLink to="todos">todos</MenuLink>
+      </Menu>
+      <Routes />
+    </Fragment>
   </BrowserRouter>
   , document.getElementById("root"));
 
