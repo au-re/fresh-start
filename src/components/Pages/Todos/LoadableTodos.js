@@ -3,11 +3,17 @@
 
 import React from "react";
 import Loadable from "react-loadable";
+import styled from "styled-components";
 
-import Loading from "../Loading/Loading";
+/* component rendered while the todo page is loaded */
+const LoadingTodos = styled.div`
+  background: salmon;
+  height: 100%;
+  width: 100%;
+`;
 
 export default Loadable({
   loader: () => import("./Todos"),
-  loading: () => <Loading />,
+  loading: () => <LoadingTodos />,
 });
 

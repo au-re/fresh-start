@@ -1,12 +1,27 @@
 import { message } from "antd";
 import React, { Component } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import request from "superagent";
 
 import CardList from "../../CardList/CardList";
 
 const { Card } = CardList;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }`;
+
+const AnimatedCardList = styled(CardList) `
+  opacity: 0;
+  animation: ${fadeIn} 0.4s ease-out forwards;
+  animation-delay: 0.5s;
+`;
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -27,7 +42,6 @@ class Todos extends Component {
       const { body } = await request
         .get("https://jsonplaceholder.typicode.com/posts")
         .accept("application/json");
-
       this.setState({ todos: body });
     } catch (error) {
       message.error("something went wrong");
@@ -58,7 +72,7 @@ class Todos extends Component {
             {
               (provided, snapshot) => (
                 <div ref={provided.innerRef}>
-                  <CardList>
+                  <AnimatedCardList>
                     {
                       todos.map((todo, idx) =>
                         <Draggable key={todo.id} draggableId={todo.id} index={idx}>
@@ -74,7 +88,7 @@ class Todos extends Component {
                         </Draggable>)
                     }
                     {provided.placeholder}
-                  </CardList>
+                  </AnimatedCardList>
                 </div>)
             }
           </Droppable>
@@ -84,7 +98,18 @@ class Todos extends Component {
   }
 }
 
+const colorFade = keyframes`
+  from {
+    background: sandybrown;
+  }
+
+  to {
+    background: #ffad36;
+  }
+`;
+
 export default styled(Todos) `
-      min-height: 100%;
-      background: #ffad36;
-    `;
+  min-height: 100%;
+  background: #ffad36;
+  animation: ${colorFade} 1s ease-out forwards;
+`;
