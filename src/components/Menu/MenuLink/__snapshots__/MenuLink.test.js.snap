@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuLink renders without props 1`] = `
+.c0 {
+  color: white;
+  font-size: 1rem;
+  display: block;
+}
+
+.c0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: white;
+}
+
+<a
+  className="c0"
+  href="#"
+  onClick={[Function]}
+/>
+`;

@@ -1,44 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Landing renders without props 1`] = `
-.c2 {
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 .c1 {
   color: white;
-  font-size: 1rem;
-}
-
-.c1:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: white;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-animation: eMLfYp 0.5s ease-out forwards;
+  animation: eMLfYp 0.5s ease-out forwards;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .c0 {
-  background: tomato;
+  background: salmon;
   color: white;
   height: 100%;
-  display: grid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-animation: dZYEHQ 1s ease-out forwards;
+  animation: dZYEHQ 1s ease-out forwards;
 }
 
 <div
   className="c0"
 >
-  <div>
-    <a
-      className="c1"
-      href="todos"
-      onClick={[Function]}
-    >
-      todos
-    </a>
-  </div>
   <h1
-    className="c2"
+    className="c1"
   >
     I'm just a Boilerplate
   </h1>
