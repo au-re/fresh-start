@@ -1,4 +1,4 @@
-import "./globalStyles";
+import "./styles/global";
 
 import React, { Fragment } from "react";
 import ReactDOM from "react-dom";

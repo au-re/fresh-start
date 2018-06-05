@@ -1,37 +1,22 @@
 import React, { Component } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }`;
-
-const colorFade = keyframes`
-  from {
-    background: salmon;
-  }
-
-  to {
-    background: tomato;
-  }
-`;
+import { fadeColor, fadeIn } from "../../../styles/animations";
 
 const LandingTitle = styled.h1`
   color: white;
   align-self: center;
   text-transform: uppercase;
   opacity: 0;
-  animation: ${fadeIn} 0.5s ease-out forwards;
+  animation: ${fadeIn()} 0.5s ease-out forwards;
   animation-delay: 0.5s;
 `;
 
 const LoadingLanding = styled.div`
   background: salmon;
 `;
+
+/* the landing page */
 
 class Landing extends Component {
 
@@ -54,5 +39,5 @@ export default styled(Landing) `
   height: 100%;
   display: flex;
   justify-content: center;
-  animation: ${colorFade} 1s ease-out forwards;
+  animation: ${fadeColor("salmon", "tomato")} 1s ease-out forwards;
 `;

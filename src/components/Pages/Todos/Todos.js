@@ -1,25 +1,17 @@
 import { message } from "antd";
 import React, { Component } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import request from "superagent";
 
+import { fadeColor, fadeIn } from "../../../styles/animations";
 import CardList from "../../CardList/CardList";
 
 const { Card } = CardList;
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }`;
-
 const AnimatedCardList = styled(CardList) `
   opacity: 0;
-  animation: ${fadeIn} 0.4s ease-out forwards;
+  animation: ${fadeIn()} 0.4s ease-out forwards;
   animation-delay: 0.5s;
 `;
 
@@ -27,7 +19,6 @@ const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
-
   return result;
 };
 
@@ -98,18 +89,8 @@ class Todos extends Component {
   }
 }
 
-const colorFade = keyframes`
-  from {
-    background: sandybrown;
-  }
-
-  to {
-    background: coral;
-  }
-`;
-
 export default styled(Todos) `
   min-height: 100%;
   background: coral;
-  animation: ${colorFade} 1s ease-out forwards;
+  animation: ${fadeColor("coral", "sandybrown")} 1s ease-out forwards;
 `;

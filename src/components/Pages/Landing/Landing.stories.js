@@ -6,11 +6,9 @@ import { MemoryRouter } from "react-router";
 import Landing from "./Landing";
 
 storiesOf("Landing", module)
-
-  .add("basic usage", withInfo(`A landing page`)(
-    () =>
-      <MemoryRouter>
-        <div style={{ height: "100vh" }}>
-          <Landing />
-        </div>
-      </MemoryRouter>));
+  .add("basic usage", withInfo(`A landing page`)(() =>
+    <MemoryRouter>
+      <div style={{ height: "100vh" }}>
+        <Landing />
+      </div>
+    </MemoryRouter>));

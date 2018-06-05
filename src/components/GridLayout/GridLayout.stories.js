@@ -5,7 +5,5 @@ import React from "react";
 import GridLayout from "./GridLayout";
 
 storiesOf("GridLayout", module)
-
-  .add("basic usage", withInfo(`GridLayout without parameters`)(
-    () =>
-      <GridLayout />));
+  .add("basic usage", withInfo(`GridLayout without parameters`)(() =>
+    <GridLayout />));

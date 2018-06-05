@@ -1,13 +1,7 @@
 import React, { Component } from "react";
-import styled, { keyframes } from "styled-components";
-
-const titletransition = keyframes`
-  from {top: 20px;}
-  to {top: 0;}
-`;
+import styled from "styled-components";
 
 const CardTitle = styled.div`
-  animation: ${titletransition} 0.25s ease-in-out forwards;
   font-weight: bold;
   font-size: 14px;
 `;
@@ -24,6 +18,7 @@ class Card extends Component {
 }
 
 export default styled(Card) `
+  position: relative;
   cursor: grab;
   background: #fff;
   color: #5f6368;

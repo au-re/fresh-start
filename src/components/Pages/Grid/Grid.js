@@ -1,48 +1,14 @@
 import React, { Component } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
+import { fadeColor } from "../../../styles/animations";
 import GridLayout from "../../GridLayout/GridLayout";
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
+/* resizable grid layout demo */
 
-  to {
-    opacity: 1;
-  }`;
-
-const colorFade = keyframes`
-  from {
-    background: lavender;
-  }
-
-  to {
-    background: LightSeaGreen;
-  }
-`;
-
-const LandingTitle = styled.h1`
-  color: white;
-  align-self: center;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: ${fadeIn} 0.5s ease-out forwards;
-  animation-delay: 0.5s;
-`;
-
-const LoadingLanding = styled.div`
-  background: salmon;
-`;
-
-class Landing extends Component {
-
-  static Title = LandingTitle;
-  static LoadingLanding = LoadingLanding;
-
+class Grid extends Component {
   render() {
     const { className } = this.props;
-
     return (
       <div className={className}>
         <GridLayout />
@@ -50,10 +16,10 @@ class Landing extends Component {
   }
 }
 
-export default styled(Landing) `
+export default styled(Grid) `
   background: lavender;
   color: white;
   min-height: 100%;
   justify-content: center;
-  animation: ${colorFade} 1s ease-out forwards;
+  animation: ${fadeColor("lavender", "lightseagreen")} 1s ease-out forwards;
 `;

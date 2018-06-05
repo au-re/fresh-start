@@ -17,11 +17,7 @@ class CardList extends Component {
 
 export default styled(CardList) `
   & > div {
-      margin: 6px 0;
-  }
-
-  & :first-child {
-    margin-top: 0;
+    padding: 6px 0;
   }
 
   max-width: 400px;
