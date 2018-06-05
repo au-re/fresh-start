@@ -49,8 +49,18 @@ npm run start
 
 ## Scripts
 
-
 A set of scripts are provided for you to test, build and analyze the project.
+
+### Storybook
+
+With storybook you can view the components you have created in isolation. To view them, simply run:
+
+```sh
+npm run storybook
+```
+
+To include a component to the storybook, simply add a `<componentName>.stories.js` file in your
+component folder.
 
 ### Test
 
@@ -95,3 +105,7 @@ npm run analyze
 
 This will look into your `build` folder and open an interactive map of the dependencies in your
 browser.
+
+## License
+
+[MIT](https://github.com/au-re/fresh-start/blob/master/LICENSE)
