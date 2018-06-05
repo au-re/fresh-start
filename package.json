@@ -1,7 +1,6 @@
 {
   "name": "fresh-start",
   "version": "0.1.0",
-  "private": true,
   "license": "MIT",
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",

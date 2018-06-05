@@ -2,7 +2,7 @@
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-> Add styled-components, routing, storybook to the [create-react-app]() boilerplate.
+> Add styled-components, routing, storybook and a sensible project structure to the [create-react-app]() boilerplate.
 
 ## Tech Stack
 
@@ -16,7 +16,6 @@
 
 ## Requirements
 
-
 You will need the following software installed on your machine:
 
 - [node](https://nodejs.org/en/)
@@ -28,16 +27,25 @@ updating [npm](https://www.npmjs.com/) to version >=5.
 
 ## Getting started
 
-First, clone this repository:
+You can setup a new project based on this boilerplate using [Yeoman](http://yeoman.io).
 
-```sh
-git clone ...
+First, install Yeoman and generator-refresh using [npm](https://www.npmjs.com/).
+
+```bash
+npm install -g yo
+npm install -g generator-refresh
+```
+
+Then generate your new project:
+
+```bash
+yo refresh <my-project>
 ```
 
 Navigate to the root of the project and install the dependencies:
 
 ```sh
-cd refresh
+cd <my-project>
 npm i
 ```
 
@@ -60,7 +68,7 @@ npm run storybook
 ```
 
 To include a component to the storybook, simply add a `<componentName>.stories.js` file in your
-component folder.
+component folder, containing the stories you want to show.
 
 ### Test
 
