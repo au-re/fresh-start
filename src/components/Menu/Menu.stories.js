@@ -11,7 +11,11 @@ storiesOf("Menu", module)
   .add("basic usage", withInfo(`MenuLink without parameters`)(
     () =>
       <MemoryRouter>
-        <Menu>
-          <MenuLink to="/">simple MenuLink</MenuLink>
-        </Menu>
+        <div style={{ background: "lightsalmon" }}>
+          <Menu>
+            <MenuLink to="/">simple MenuLink</MenuLink>
+            <MenuLink to="/">simple MenuLink</MenuLink>
+            <MenuLink to="/">simple MenuLink</MenuLink>
+          </Menu>
+        </div>
       </MemoryRouter>));

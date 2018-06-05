@@ -104,12 +104,12 @@ const colorFade = keyframes`
   }
 
   to {
-    background: #ffad36;
+    background: coral;
   }
 `;
 
 export default styled(Todos) `
   min-height: 100%;
-  background: #ffad36;
+  background: coral;
   animation: ${colorFade} 1s ease-out forwards;
 `;
