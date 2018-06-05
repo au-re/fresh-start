@@ -2,6 +2,8 @@
   "name": "fresh-start",
   "version": "0.1.0",
   "license": "MIT",
+  "description": "Add styled-components, routing, storybook and a sensible project structure to the create-react-app boilerplate.",
+  "homepage": "https://au-re.github.io/fresh-start/",
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
     "start": "react-app-rewired start",
@@ -9,6 +11,8 @@
     "clean": "rm -rf node_modules && npm i",
     "test": "react-scripts test --env=jsdom",
     "coverage": "npm run test -- --coverage",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "eject": "react-scripts eject",
     "commit": "git-cz",
     "storybook": "start-storybook -p 9009 -s public",
@@ -56,6 +60,7 @@
     "commitizen": "^2.10.1",
     "cz-emoji": "^1.1.1",
     "eslint-config-airbnb-base": "^12.1.0",
+    "gh-pages": "^1.2.0",
     "jest-styled-components": "^5.0.1",
     "react-test-renderer": "^16.4.0",
     "source-map-explorer": "^1.5.0"

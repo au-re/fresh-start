@@ -11,7 +11,7 @@ import Routes from "./routes";
 const { MenuLink } = Menu;
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Fragment>
       <Menu style={{ position: "fixed" }}>
         <MenuLink to="/">landing page</MenuLink>

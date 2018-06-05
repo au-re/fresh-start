@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const CardTitle = styled.div`
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 12px;
 `;
 
 class Card extends Component {
