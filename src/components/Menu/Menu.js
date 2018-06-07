@@ -17,6 +17,7 @@ class Menu extends Component {
 }
 
 export default styled(Menu) `
+  z-index: 30;
   padding: 20px;
   background: transparent;
 `;

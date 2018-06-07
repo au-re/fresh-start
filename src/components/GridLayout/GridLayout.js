@@ -11,9 +11,8 @@ const GridItem = styled.div`
   display: flex;
 `;
 
-class DemoGrid extends React.Component {
+class GridLayout extends React.Component {
   render() {
-    // layout is an array of objects, see the demo for more complete usage
     const layout = [
       { i: "a", x: 1, y: 0, w: 1, h: 1 },
       { i: "b", x: 1, y: 2, w: 2, h: 1 },
@@ -24,6 +23,7 @@ class DemoGrid extends React.Component {
       { i: "g", x: 2, y: 7, w: 1, h: 1 },
       { i: "h", x: 2, y: 8, w: 1, h: 1 },
     ];
+
     return (
       <ResponsiveGridLayout
         {...this.props}
@@ -41,7 +41,7 @@ class DemoGrid extends React.Component {
   }
 }
 
-export default styled(DemoGrid) `
+export default styled(GridLayout) `
 
   .react-grid-layout {
     position: relative;
