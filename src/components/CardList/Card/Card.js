@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const CardTitle = styled.div`
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.9rem;
+  margin-bottom: 1.3rem;
 `;
 
 class Card extends Component {
@@ -19,25 +20,18 @@ class Card extends Component {
 
 export default styled(Card) `
   position: relative;
+  border: #000 1px solid;
   cursor: grab;
   background: #fff;
-  color: #5f6368;
-  font-size: 1rem;
+  color: #333;
+  font-size: 0.8rem;
   padding: 1rem;
   border-radius: 3px;
   opacity: 1;
   overflow: hidden;
   display: grid;
   min-height: 60px;
-  box-shadow: 0 1px 1px 0 rgba(60,64,67,.08),0 1px 3px 1px rgba(60,64,67,.16);
-  transition: background 0.2s cubic-bezier(.4,0,.2,1),
-              color 0.2s cubic-bezier(.4,0,.2,1),
-              box-shadow 0.1s cubic-bezier(.4,0,.2,1),
-              transform 0.1s ease-in-out,
-              z-index 0.2s ease-in-out;
-
-  :hover {
-    background: lightsalmon;
-    color: #FFF;
-  }
+  box-shadow: ${(props) => (props.isDragging
+    ? "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"
+    : "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)")};
 `;

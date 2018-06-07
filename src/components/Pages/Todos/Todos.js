@@ -13,6 +13,7 @@ const AnimatedCardList = styled(CardList) `
   opacity: 0;
   animation: ${fadeIn()} 0.4s ease-out forwards;
   animation-delay: 0.5s;
+  background: ${(props) => (props.isDraggingOver ? "papayawhip" : "transparent")};
 `;
 
 const reorder = (list, startIndex, endIndex) => {
@@ -63,7 +64,7 @@ class Todos extends Component {
             {
               (provided, snapshot) => (
                 <div ref={provided.innerRef}>
-                  <AnimatedCardList>
+                  <AnimatedCardList isDraggingOver={snapshot.isDraggingOver}>
                     {
                       todos.map((todo, idx) =>
                         <Draggable key={todo.id} draggableId={todo.id} index={idx}>
@@ -73,7 +74,11 @@ class Todos extends Component {
                                 ref={provided.innerRef}
                                 {...provided.draggableProps}
                                 {...provided.dragHandleProps}>
-                                <Card title={todo.title} />
+                                <Card
+                                  isDragging={snapshot.isDragging}
+                                  title={todo.title}>
+                                  {todo.body}
+                                </Card>
                               </div>)
                           }
                         </Draggable>)

@@ -17,10 +17,10 @@ class CardList extends Component {
 
 export default styled(CardList) `
   & > div {
-    padding: 6px 0;
+    padding: 5px 0;
   }
-
+  padding: 0 20px;
   max-width: 400px;
   margin: auto;
-  padding: 20px;
+  transition: all 0.2s ease-in;
 `;

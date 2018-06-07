@@ -8,8 +8,8 @@ exports[`Landing renders without props 1`] = `
   align-self: center;
   text-transform: uppercase;
   opacity: 0;
-  -webkit-animation: eMLfYp 0.5s ease-out forwards;
-  animation: eMLfYp 0.5s ease-out forwards;
+  -webkit-animation: bBzLxR 0.5s ease-out forwards;
+  animation: bBzLxR 0.5s ease-out forwards;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
@@ -26,8 +26,8 @@ exports[`Landing renders without props 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-animation: dZYEHQ 1s ease-out forwards;
-  animation: dZYEHQ 1s ease-out forwards;
+  -webkit-animation: dKiLBl 1s ease-out forwards;
+  animation: dKiLBl 1s ease-out forwards;
 }
 
 <div
