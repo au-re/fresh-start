@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import Grid from "./components/Pages/Grid/Grid";
-import Landing from "./components/Pages/Landing/LoadableLanding";
-import Todos from "./components/Pages/Todos/LoadableTodos";
+import Grid from "./pages/Grid/Grid";
+import Landing from "./pages/Landing/Landing.loader";
+import Todos from "./pages/Todos/Todos.loader";
 
 /* Application Routes */
 

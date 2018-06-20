@@ -1,27 +1,31 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import { fadeColor, fadeIn } from "../../../styles/animations";
+import config from "../../config";
+import { fadeColor, fadeIn } from "../../styles";
 
 const LandingTitle = styled.h1`
   color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
   align-self: center;
+  text-align: center;
   text-transform: uppercase;
   opacity: 0;
   animation: ${fadeIn()} 0.5s ease-out forwards;
   animation-delay: 0.5s;
 `;
 
-const LoadingLanding = styled.div`
-  background: salmon;
+const LandingFooter = styled.div`
+  position: absolute;
+  padding: 1rem;
+  bottom: 0;
+  left: 0;
 `;
 
 /* the landing page */
 
 class Landing extends Component {
-
-  static Title = LandingTitle;
-  static LoadingLanding = LoadingLanding;
 
   render() {
     const { className } = this.props;
@@ -29,6 +33,7 @@ class Landing extends Component {
     return (
       <div className={className}>
         <LandingTitle>I'm just a Boilerplate</LandingTitle>
+        <LandingFooter>{config.copyrightNotice}<strong>{config.company}</strong></LandingFooter>
       </div>);
   }
 }

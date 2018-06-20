@@ -4,7 +4,7 @@ import React, { Fragment } from "react";
 
 import Grid from "./Grid";
 
-storiesOf("Grid", module)
+storiesOf("grid page", module)
   .add("basic usage", withInfo(`Grid without parameters`)(
     () =>
       <Fragment>

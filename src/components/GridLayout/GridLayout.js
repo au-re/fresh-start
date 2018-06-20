@@ -15,13 +15,13 @@ class GridLayout extends React.Component {
   render() {
     const layout = [
       { i: "a", x: 1, y: 0, w: 1, h: 1 },
-      { i: "b", x: 1, y: 2, w: 2, h: 1 },
-      { i: "c", x: 2, y: 3, w: 1, h: 1 },
-      { i: "d", x: 2, y: 4, w: 1, h: 1 },
-      { i: "e", x: 2, y: 5, w: 1, h: 1 },
-      { i: "f", x: 2, y: 6, w: 1, h: 1 },
-      { i: "g", x: 2, y: 7, w: 1, h: 1 },
-      { i: "h", x: 2, y: 8, w: 1, h: 1 },
+      { i: "b", x: 2, y: 0, w: 1, h: 1 },
+      { i: "c", x: 1, y: 3, w: 1, h: 1 },
+      { i: "d", x: 1, y: 4, w: 1, h: 1 },
+      { i: "e", x: 1, y: 5, w: 1, h: 1 },
+      { i: "f", x: 1, y: 6, w: 1, h: 1 },
+      { i: "g", x: 1, y: 7, w: 1, h: 1 },
+      { i: "h", x: 1, y: 8, w: 1, h: 1 },
     ];
 
     return (

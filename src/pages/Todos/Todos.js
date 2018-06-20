@@ -4,8 +4,8 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import request from "superagent";
 
-import { fadeColor, fadeIn } from "../../../styles/animations";
-import CardList from "../../CardList/CardList";
+import CardList from "../../components/CardList/CardList";
+import { fadeColor, fadeIn } from "../../styles";
 
 const { Card } = CardList;
 

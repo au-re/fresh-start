@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import { fadeColor } from "../../../styles/animations";
-import GridLayout from "../../GridLayout/GridLayout";
+import GridLayout from "../../components/GridLayout/GridLayout";
+import { fadeColor } from "../../styles";
 
 /* resizable grid layout demo */
 

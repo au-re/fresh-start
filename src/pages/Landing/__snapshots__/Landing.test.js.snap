@@ -3,15 +3,25 @@
 exports[`Landing renders without props 1`] = `
 .c1 {
   color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  text-align: center;
   text-transform: uppercase;
   opacity: 0;
   -webkit-animation: bBzLxR 0.5s ease-out forwards;
   animation: bBzLxR 0.5s ease-out forwards;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
+}
+
+.c2 {
+  position: absolute;
+  padding: 1rem;
+  bottom: 0;
+  left: 0;
 }
 
 .c0 {
@@ -38,5 +48,13 @@ exports[`Landing renders without props 1`] = `
   >
     I'm just a Boilerplate
   </h1>
+  <div
+    className="c2"
+  >
+    © 2018 
+    <strong>
+      Acme Inc
+    </strong>
+  </div>
 </div>
 `;
