@@ -5,7 +5,7 @@ import config from "../../config";
 import { fadeColor, fadeIn } from "../../styles";
 
 const LandingTitle = styled.h1`
-  color: white;
+  color: ${(props) => props.theme.blends.landing.text};
   font-weight: bold;
   font-size: 1.5rem;
   align-self: center;
@@ -39,10 +39,10 @@ class Landing extends Component {
 }
 
 export default styled(Landing) `
-  background: salmon;
-  color: white;
+  background: ${(props) => props.theme.blends.landing.accent};
+  color: ${(props) => props.theme.blends.landing.text};
   height: 100%;
   display: flex;
   justify-content: center;
-  animation: ${fadeColor("salmon", "tomato")} 1s ease-out forwards;
+  animation: ${(props) => fadeColor(props.theme.blends.landing.accent, props.theme.blends.landing.primary)} 1s ease-out forwards;
 `;

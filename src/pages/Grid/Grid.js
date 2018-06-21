@@ -17,9 +17,9 @@ class Grid extends Component {
 }
 
 export default styled(Grid) `
-  background: lavender;
-  color: white;
+  background: ${(props) => props.theme.blends.grid.accent};
+  color: ${(props) => props.theme.blends.grid.text};
   min-height: 100%;
   justify-content: center;
-  animation: ${fadeColor("lavender", "lightseagreen")} 1s ease-out forwards;
+  animation: ${(props) => fadeColor(props.theme.blends.grid.accent, props.theme.blends.grid.primary)} 1s ease-out forwards;
 `;

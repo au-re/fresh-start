@@ -95,7 +95,9 @@ class Todos extends Component {
 }
 
 export default styled(Todos) `
+  background: ${(props) => props.theme.blends.todos.accent};
+  color: ${(props) => props.theme.blends.todos.text};
   min-height: 100%;
-  background: coral;
-  animation: ${fadeColor("coral", "sandybrown")} 1s ease-out forwards;
+  animation: ${(props) =>
+    fadeColor(props.theme.blends.todos.accent, props.theme.blends.todos.primary)} 1s ease-out forwards;
 `;

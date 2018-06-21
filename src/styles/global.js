@@ -11,11 +11,13 @@ injectGlobal`
   html,
   body,
   #root {
-      margin: 0;
-      height: 100%;
-      width: 100%;
-      font-family: sans-serif;
-      font-size: 20px;
+    @import url('https://fonts.googleapis.com/css?family=Nunito|Lato');
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 1.5rem;
 
     ${media.xxl`
       font-size: 18px;
