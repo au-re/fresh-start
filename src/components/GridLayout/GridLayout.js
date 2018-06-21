@@ -2,6 +2,8 @@ import React from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import styled from "styled-components";
 
+import { index } from "../../styles";
+
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const GridItem = styled.div`
@@ -55,13 +57,13 @@ export default styled(GridLayout) `
     transition-property: transform;
   }
   .react-grid-item.resizing {
-    z-index: 1;
+    z-index: ${index.grid};
     will-change: width, height;
   }
 
   .react-grid-item.react-draggable-dragging {
     transition: none;
-    z-index: 3;
+    z-index: ${index.gridDragging};
     will-change: transform;
   }
 
@@ -69,7 +71,7 @@ export default styled(GridLayout) `
     background: mediumpurple;
     opacity: 0.2;
     transition-duration: 100ms;
-    z-index: 2;
+    z-index: ${index.gridPlaceholder};
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+import { index } from "../../styles";
 import MenuLink from "./MenuLink/MenuLink";
 
 class Menu extends Component {
@@ -17,7 +18,7 @@ class Menu extends Component {
 }
 
 export default styled(Menu) `
-  z-index: 30;
+  z-index: ${index.menu};
   padding: 20px;
   background: transparent;
 `;

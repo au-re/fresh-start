@@ -4,8 +4,8 @@ export * from "./mixins";
 /* z-index position definition */
 
 export const index = {
-  header: 18,
-  notification: 12,
-  content: 6,
-  footer: 1,
+  menu: 10,
+  grid: 1,
+  gridDraging: 3,
+  gridPlaceholder: 2,
 };
