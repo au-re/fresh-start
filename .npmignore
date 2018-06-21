@@ -1,0 +1,1 @@
+# prevent npm modifying .gitignore's filename, See https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package
