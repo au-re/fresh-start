@@ -28,7 +28,6 @@ exports[`Grid renders without props 1`] = `
 .c1 .react-grid-item.react-draggable-dragging {
   -webkit-transition: none;
   transition: none;
-  z-index: 3;
   will-change: transform;
 }
 
@@ -69,15 +68,13 @@ exports[`Grid renders without props 1`] = `
 }
 
 .c0 {
-  background: lavender;
-  color: white;
   min-height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-animation: cOCiY 1s ease-out forwards;
-  animation: cOCiY 1s ease-out forwards;
+  -webkit-animation: euXcxa 1s ease-out forwards;
+  animation: euXcxa 1s ease-out forwards;
 }
 
 <div

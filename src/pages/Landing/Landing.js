@@ -1,3 +1,4 @@
+import get from "lodash.get";
 import React, { Component } from "react";
 import styled from "styled-components";
 
@@ -5,7 +6,7 @@ import config from "../../config";
 import { fadeColor, fadeIn } from "../../styles";
 
 const LandingTitle = styled.h1`
-  color: ${(props) => props.theme.blends.landing.text};
+  color: ${(props) => get(props, "theme.blends.landing.text")};
   font-weight: bold;
   font-size: 1.5rem;
   align-self: center;
@@ -39,10 +40,11 @@ class Landing extends Component {
 }
 
 export default styled(Landing) `
-  background: ${(props) => props.theme.blends.landing.accent};
-  color: ${(props) => props.theme.blends.landing.text};
+  background: ${(props) => get(props, "theme.blends.landing.accent")};
+  color: ${(props) => get(props, "theme.blends.landing.text")};
   height: 100%;
   display: flex;
   justify-content: center;
-  animation: ${(props) => fadeColor(props.theme.blends.landing.accent, props.theme.blends.landing.primary)} 1s ease-out forwards;
+  animation: ${(props) =>
+    fadeColor(get(props, "theme.blends.landing.accent"), get(props, "theme.blends.landing.primary"))} 1s ease-out forwards;
 `;

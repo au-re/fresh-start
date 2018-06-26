@@ -1,3 +1,4 @@
+import get from "lodash.get";
 import React, { Component } from "react";
 import styled from "styled-components";
 
@@ -17,9 +18,10 @@ class Grid extends Component {
 }
 
 export default styled(Grid) `
-  background: ${(props) => props.theme.blends.grid.accent};
-  color: ${(props) => props.theme.blends.grid.text};
+  background: ${(props) => get(props, "theme.blends.grid.accent")};
+  color: ${(props) => get(props, "theme.blends.grid.text")};
   min-height: 100%;
   justify-content: center;
-  animation: ${(props) => fadeColor(props.theme.blends.grid.accent, props.theme.blends.grid.primary)} 1s ease-out forwards;
+  animation: ${(props) =>
+    fadeColor(get(props, "theme.blends.grid.accent"), get(props, "theme.blends.grid.primary"))} 1s ease-out forwards;
 `;

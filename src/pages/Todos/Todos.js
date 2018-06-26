@@ -1,4 +1,5 @@
 import { message } from "antd";
+import get from "lodash.get";
 import React, { Component } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
@@ -13,7 +14,7 @@ const AnimatedCardList = styled(CardList) `
   opacity: 0;
   animation: ${fadeIn()} 0.4s ease-out forwards;
   animation-delay: 0.5s;
-  background: ${(props) => (props.isDraggingOver ? "papayawhip" : "transparent")};
+  background: ${(props) => (props.isDraggingOver ? get(props, "theme.palette.primary") : "transparent")};
 `;
 
 const reorder = (list, startIndex, endIndex) => {
@@ -95,9 +96,9 @@ class Todos extends Component {
 }
 
 export default styled(Todos) `
-  background: ${(props) => props.theme.blends.todos.accent};
-  color: ${(props) => props.theme.blends.todos.text};
+  background: ${(props) => get(props, "theme.blends.todos.accent")};
+  color: ${(props) => get(props, "theme.blends.todos.text")};
   min-height: 100%;
   animation: ${(props) =>
-    fadeColor(props.theme.blends.todos.accent, props.theme.blends.todos.primary)} 1s ease-out forwards;
+    fadeColor(get(props, "theme.blends.todos.accent"), get(props, "theme.blends.todos.primary"))} 1s ease-out forwards;
 `;
