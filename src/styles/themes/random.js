@@ -1,5 +1,15 @@
 import chroma from "chroma-js";
 
+const palette = {
+  primary: chroma.random(),
+  secondary: "tomato",
+  greys: ["#F5F5F5", "#E8E8E8", "#BFBFBF", "#8C8C8C", "#424242", "#303030"],
+  info: "skyblue",
+  danger: "tomato",
+  warning: "orangered",
+  success: "olivedrab",
+};
+
 const shadows = [
   "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
   "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
@@ -52,10 +62,14 @@ const todosColors = makeColors();
 const landingColors = makeColors();
 
 export default ({
-  name: "pop",
+  name: "random",
+  palette,
   shadows,
   fonts,
   blends: {
+    menu: {
+      text: "white",
+    },
     grid: {
       primary: gridColors.base.hex(),
       accent: gridColors.accent.hex(),

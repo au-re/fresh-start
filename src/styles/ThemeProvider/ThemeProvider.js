@@ -5,34 +5,56 @@ import { ThemeProvider as Provider } from "styled-components";
 import pop from "../themes/pop";
 import random from "../themes/random";
 
-/* provides a function to set the theme */
+/* adds a function to set the theme on top of styled components themeprovider */
 
 class ThemeProvider extends Component {
 
   state = {
     themes: [pop, random],
-    selected: pop,
+    selectedTheme: pop,
   }
 
   static childContextTypes = {
-    themes: PropTypes.object.isRequired,
+    themes: PropTypes.array.isRequired,
+    selectedTheme: PropTypes.object.isRequired,
     setTheme: PropTypes.func.isRequired,
   }
 
   getChildContext = () => {
-    const { themes } = this.props;
-    return { themes, setTheme: this.setTheme };
+    const { themes, selectedTheme } = this.state;
+    return { themes, setTheme: this.setTheme, selectedTheme };
   }
 
   setTheme = (theme) => {
-    this.setState({ selected: theme });
+    this.setState({ selectedTheme: theme });
   }
 
   render() {
-    return <Provider theme={this.state.selected}>
+    return <Provider theme={this.state.selectedTheme}>
       {this.props.children}
     </Provider>;
   }
 }
 
+/* wrapper for any component that wishes to set the theme */
+
+const themeWrapper = (ComponentToWrap) => class extends Component {
+
+  static contextTypes = {
+    themes: PropTypes.array.isRequired,
+    setTheme: PropTypes.func.isRequired,
+    selectedTheme: PropTypes.object.isRequired,
+  }
+
+  render() {
+    const { themes, setTheme, selectedTheme } = this.context;
+    return (<ComponentToWrap
+      {...this.props}
+      setTheme={setTheme}
+      themes={themes}
+      selectedTheme={selectedTheme} />);
+  }
+};
+
 export default ThemeProvider;
+export { themeWrapper };

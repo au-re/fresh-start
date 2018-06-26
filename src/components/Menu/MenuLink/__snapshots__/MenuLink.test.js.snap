@@ -2,20 +2,30 @@
 
 exports[`MenuLink renders without props 1`] = `
 .c0 {
-  color: white;
+  -webkit-transition: all 0.2 ease-in-out;
+  transition: all 0.2 ease-in-out;
+  opacity: 0.8;
   font-size: 1rem;
   display: block;
 }
 
+.c0.active {
+  opacity: 1;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
 .c0:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: white;
+  opacity: 1;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 <a
+  aria-current={false}
   className="c0"
   href="#"
   onClick={[Function]}
+  style={undefined}
 />
 `;

@@ -2,7 +2,7 @@
 
 exports[`Menu renders without props 1`] = `
 .c0 {
-  z-index: 30;
+  z-index: 10;
   padding: 20px;
   background: transparent;
 }

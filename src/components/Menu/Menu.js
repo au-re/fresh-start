@@ -6,7 +6,7 @@ import MenuLink from "./MenuLink/MenuLink";
 
 class Menu extends Component {
 
-  static MenuLink = MenuLink;
+  static Link = MenuLink;
 
   render() {
     const { children, ...rest } = this.props;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeDropdown renders without props 1`] = `
+<span
+  onBlur={undefined}
+  onClick={undefined}
+  onContextMenu={undefined}
+  onFocus={undefined}
+  onMouseDown={undefined}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onTouchStart={undefined}
+/>
+`;

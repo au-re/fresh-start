@@ -1,3 +1,13 @@
+const palette = {
+  primary: "lightseagreen",
+  secondary: "tomato",
+  greys: ["#F5F5F5", "#E8E8E8", "#BFBFBF", "#8C8C8C", "#424242", "#303030"],
+  info: "skyblue",
+  danger: "tomato",
+  warning: "orangered",
+  success: "olivedrab",
+};
+
 const shadows = [
   "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
   "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
@@ -14,6 +24,7 @@ const fonts = {
 
 export default ({
   name: "pop",
+  palette,
   shadows,
   fonts,
   blends: {
@@ -28,12 +39,12 @@ export default ({
     todos: {
       primary: "tomato",
       accent: "salmon",
-      text: "#FFF",
+      text: "white",
     },
     landing: {
       primary: "sandybrown",
       accent: "coral",
-      text: "#FFF",
+      text: "white",
     },
   },
 });
