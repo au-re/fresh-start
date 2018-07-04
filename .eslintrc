@@ -20,7 +20,7 @@
         "devDependencies": [
           "**/*test.js",
           "**/*stories.js",
-          "config-overrides"
+          "config-overrides.js"
         ]
       }
     ],
