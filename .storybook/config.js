@@ -1,6 +1,13 @@
-import "antd/dist/antd.css";
-
+import { setOptions } from "@storybook/addon-options";
 import { configure } from "@storybook/react";
+
+setOptions({
+  name: "fresh-start",
+  url: "https://github.com/au-re/fresh-start",
+  goFullScreen: false,
+  showDownPanel: false,
+  downPanelInRight: false,
+});
 
 const req = require.context("../src", true, /.+\.stories\.js/);
 

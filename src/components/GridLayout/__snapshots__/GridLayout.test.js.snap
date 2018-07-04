@@ -28,7 +28,6 @@ exports[`GridLayout renders without props 1`] = `
 .c0 .react-grid-item.react-draggable-dragging {
   -webkit-transition: none;
   transition: none;
-  z-index: 3;
   will-change: transform;
 }
 

@@ -1,12 +1,15 @@
-import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 import React from "react";
+import { withDocs } from "storybook-readme";
 
-import Card from "./Card/Card";
 import CardList from "./CardList";
+import readme from "./README.md";
 
 storiesOf("CardList", module)
-  .add("basic usage", withInfo(`Card without parameters`)(() =>
+  .addDecorator(withDocs(readme))
+  .add("basic usage", () =>
     <CardList>
-      <Card title="hello world">simple card</Card>
-    </CardList>));
+      <CardList.Card title="hello world">card 1</CardList.Card>
+      <CardList.Card title="hello world">card 2</CardList.Card>
+      <CardList.Card title="hello world">card 3</CardList.Card>
+    </CardList>);

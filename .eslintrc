@@ -18,7 +18,9 @@
       "error",
       {
         "devDependencies": [
-          "**/*test.js"
+          "**/*test.js",
+          "**/*stories.js",
+          "config-overrides"
         ]
       }
     ],

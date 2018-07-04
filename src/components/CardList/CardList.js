@@ -1,21 +1,8 @@
-import React, { Component } from "react";
 import styled from "styled-components";
 
 import Card from "./Card/Card";
 
-class CardList extends Component {
-  static Card = Card
-
-  render() {
-    const { className, children } = this.props;
-    return (
-      <div className={className}>
-        {children}
-      </div>);
-  }
-}
-
-export default styled(CardList) `
+const CardList = styled.div`
   & > div {
     padding: 5px 0;
   }
@@ -24,3 +11,7 @@ export default styled(CardList) `
   margin: auto;
   transition: all 0.2s ease-in;
 `;
+
+CardList.Card = Card;
+
+export default CardList;
