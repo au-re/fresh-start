@@ -4,7 +4,6 @@ import React from "react";
 import { MemoryRouter } from "react-router";
 
 import Menu from "./Menu";
-import MenuLink from "./MenuLink/MenuLink";
 
 storiesOf("Menu", module)
 
@@ -13,9 +12,9 @@ storiesOf("Menu", module)
       <MemoryRouter>
         <div style={{ background: "lightsalmon" }}>
           <Menu>
-            <MenuLink to="/">simple MenuLink</MenuLink>
-            <MenuLink to="/">simple MenuLink</MenuLink>
-            <MenuLink to="/">simple MenuLink</MenuLink>
+            <Menu.Link to="/">menu link one</Menu.Link>
+            <Menu.Link to="/">menu link two</Menu.Link>
+            <Menu.Link to="/">menu link three</Menu.Link>
           </Menu>
         </div>
       </MemoryRouter>));

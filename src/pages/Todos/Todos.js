@@ -1,4 +1,3 @@
-import { message } from "antd";
 import get from "lodash.get";
 import React, { Component } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
@@ -37,7 +36,7 @@ class Todos extends Component {
         .accept("application/json");
       this.setState({ todos: body });
     } catch (error) {
-      message.error("something went wrong");
+      console.log("something went wrong");
     }
   }
 

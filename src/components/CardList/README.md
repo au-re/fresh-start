@@ -1,5 +1,7 @@
-CardList
+Cards
 ===
+
+Some dummy elements to demo the project structure.
 
 You can display your cards in a list with this component.
 

@@ -1,5 +1,5 @@
 const palette = {
-  primary: "lightseagreen",
+  primary: "cornflowerblue",
   secondary: "tomato",
   greys: ["#F5F5F5", "#E8E8E8", "#BFBFBF", "#8C8C8C", "#424242", "#303030"],
   info: "skyblue",

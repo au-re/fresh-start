@@ -3,12 +3,12 @@ import "jest-styled-components";
 import React from "react";
 import renderer from "react-test-renderer";
 
-import ThemeDropdown from "./ThemeDropdown";
+import ThemeMenu from "./ThemeMenu";
 
-describe("ThemeDropdown", () => {
+describe("ThemeMenu", () => {
 
   it("renders without props", () => {
-    const tree = renderer.create(<ThemeDropdown />).toJSON();
+    const tree = renderer.create(<ThemeMenu />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

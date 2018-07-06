@@ -41,9 +41,9 @@ class ThemeProvider extends Component {
 const themeWrapper = (ComponentToWrap) => class extends Component {
 
   static contextTypes = {
-    themes: PropTypes.array.isRequired,
-    setTheme: PropTypes.func.isRequired,
-    selectedTheme: PropTypes.object.isRequired,
+    themes: PropTypes.array,
+    setTheme: PropTypes.func,
+    selectedTheme: PropTypes.object,
   }
 
   render() {
