@@ -3,12 +3,15 @@ import "jest-styled-components";
 import React from "react";
 import renderer from "react-test-renderer";
 
-import Menu from "./Menu";
+import ThemeProvider from "./ThemeProvider";
 
-describe("Menu", () => {
+describe("ThemeProvider", () => {
 
   it("renders without props", () => {
-    const tree = renderer.create(<Menu />).toJSON();
+    const tree = renderer.create(
+      <ThemeProvider>
+        <div />
+      </ThemeProvider>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -1,9 +1,11 @@
+import "../src/styles/global";
+
 import { setOptions } from "@storybook/addon-options";
 import { configure } from "@storybook/react";
 
 setOptions({
-  name: "fresh-start",
-  url: "https://github.com/au-re/fresh-start",
+  name: "refresh-template-project",
+  url: "https://github.com/au-re/refresh-template-project",
   goFullScreen: false,
   showDownPanel: false,
   downPanelInRight: false,

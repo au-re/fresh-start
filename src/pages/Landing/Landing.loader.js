@@ -1,4 +1,4 @@
-// split the bundle on a page level to limit the size of the initial load
+// split the bundle to limit the size of the initial load
 // https://github.com/jamiebuilds/react-loadable
 
 import React from "react";

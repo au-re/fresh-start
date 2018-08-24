@@ -1,6 +1,6 @@
 import { injectGlobal } from "styled-components";
 
-import { media } from "./mixins";
+import { media } from "./shared";
 
 /*
   use the component based API for global styling when it is done
@@ -8,10 +8,11 @@ import { media } from "./mixins";
  */
 
 injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=Lato:300,400,600,700');
+
   html,
   body,
   #root {
-    @import url('https://fonts.googleapis.com/css?family=Nunito|Lato');
     margin: 0;
     height: 100%;
     width: 100%;

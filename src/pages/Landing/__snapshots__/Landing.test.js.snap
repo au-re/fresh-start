@@ -1,7 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Landing renders without props 1`] = `
-.c1 {
+.c1:hover .octo-arm {
+  -webkit-animation: jJWalO 560ms ease-in-out;
+  animation: jJWalO 560ms ease-in-out;
+}
+
+.c5 {
+  min-width: 120px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.c4 {
+  border-left: 1px solid;
+  padding: 0 24px;
+  margin: 0 24px;
+  display: inline-block;
+}
+
+.c2 {
   font-weight: bold;
   font-size: 1.5rem;
   -webkit-align-self: center;
@@ -16,7 +34,13 @@ exports[`Landing renders without props 1`] = `
   animation-delay: 0.5s;
 }
 
-.c2 {
+.c3 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c6 {
   position: absolute;
   padding: 1rem;
   bottom: 0;
@@ -29,6 +53,9 @@ exports[`Landing renders without props 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -40,13 +67,65 @@ exports[`Landing renders without props 1`] = `
 <div
   className="c0"
 >
-  <h1
+  <a
     className="c1"
+    href="/"
+  >
+    <svg
+      fill="#FFF"
+      height={80}
+      style={
+        Object {
+          "position": "absolute",
+          "right": 0,
+          "top": "0",
+          "zIndex": 10,
+        }
+      }
+      viewBox="0 0 250 250"
+      width={80}
+    >
+      <path
+        d="M0 0l115 115h15l12 27 108 108V0z"
+        fill="#151513"
+      />
+      <path
+        className="octo-arm"
+        d="M128 109c-15-9-9-19-9-19 3-7 2-11 2-11-1-7 3-2 3-2 4 5 2 11 2 11-3 10 5 15 9 16"
+        style={
+          Object {
+            "WebkitTransformOrigin": "130px 106px",
+            "transformOrigin": "130px 106px",
+          }
+        }
+      />
+      <path
+        className="octo-body"
+        d="M115 115s4 2 5 0l14-14c3-2 6-3 8-3-8-11-15-24 2-41 5-5 10-7 16-7 1-2 3-7 12-11 0 0 5 3 7 16 4 2 8 5 12 9s7 8 9 12c14 3 17 7 17 7-4 8-9 11-11 11 0 6-2 11-7 16-16 16-30 10-41 2 0 3-1 7-5 11l-12 11c-1 1 1 5 1 5z"
+      />
+    </svg>
+  </a>
+  <h1
+    className="c2"
   >
     I'm just a Boilerplate
   </h1>
   <div
-    className="c2"
+    className="c3"
+  >
+    themeable
+    <div
+      className="c4"
+      style={undefined}
+    >
+      <div
+        className="c5"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="c6"
   >
     © 2018 
     <strong>

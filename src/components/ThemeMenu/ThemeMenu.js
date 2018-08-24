@@ -2,22 +2,17 @@ import get from "lodash.get";
 import React from "react";
 import styled from "styled-components";
 
-import { themeWrapper } from "../../styles/ThemeProvider/ThemeProvider";
-import Menu from "../Menu/Menu";
+import { withTheme } from "../ThemeProvider/ThemeProvider";
 
 const Item = styled.div`
   min-width: 120px;
-  color: ${(props) => (props.isSelected ? get(props, "theme.palette.primary") : "#333")};
+  color: ${(props) => (props.isSelected ? get(props, "theme.blends.themeMenu.color") : "#333")};
   font-size: 1rem;
   cursor: pointer;
-
-  :hover {
-    color:
-  }
 `;
 
 const ThemeMenu = ({ style, className, themes, setTheme, selectedTheme }) => (
-  <Menu style={style} className={className}>
+  <div style={style} className={className}>
     {
       themes.map((theme, idx) =>
         <Item
@@ -27,7 +22,7 @@ const ThemeMenu = ({ style, className, themes, setTheme, selectedTheme }) => (
           {theme.name}
         </Item>)
     }
-  </Menu>);
+  </div>);
 
 ThemeMenu.defaultProps = {
   themes: [],
@@ -35,4 +30,11 @@ ThemeMenu.defaultProps = {
   selectedTheme: {},
 };
 
-export default themeWrapper(ThemeMenu);
+const StyledThemeMenu = styled(withTheme(ThemeMenu))`
+  border-left: 1px solid ${(props) => get(props, "theme.blends.themeMenu.color")};
+  padding: 0 24px;
+  margin: 0 24px;
+  display: inline-block;
+`;
+
+export default StyledThemeMenu;

@@ -3,12 +3,13 @@ import "jest-styled-components";
 import React from "react";
 import renderer from "react-test-renderer";
 
-import Grid from "./Grid";
+import GithubCorner from "./GithubCorner";
 
-describe("Grid", () => {
+describe("GithubCorner", () => {
 
   it("renders without props", () => {
-    const tree = renderer.create(<Grid />).toJSON();
+    const tree = renderer.create(<GithubCorner />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
+

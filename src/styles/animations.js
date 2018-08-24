@@ -14,7 +14,7 @@ export const fadeIn = (start = 0, end = 1) => keyframes`
     opacity: ${end};
   }`;
 
-export const fadeColor = (startColor, endColor) => keyframes`
+export const fadeBackgroundColor = (startColor, endColor) => keyframes`
   from {
     background: ${startColor};
   }

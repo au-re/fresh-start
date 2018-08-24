@@ -1,14 +1,15 @@
-import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import { MemoryRouter } from "react-router";
+import { MemoryRouter as Router } from "react-router";
 
+import ThemeProvider from "../../components/ThemeProvider/ThemeProvider";
+import themes from "../../themes";
 import Landing from "./Landing";
 
-storiesOf("landing page", module)
-  .add("basic usage", withInfo(`A landing page`)(() =>
-    <MemoryRouter>
-      <div style={{ height: "100vh" }}>
+storiesOf("Landing Page", module)
+  .add("basic usage", () =>
+    <Router>
+      <ThemeProvider themes={themes}>
         <Landing />
-      </div>
-    </MemoryRouter>));
+      </ThemeProvider>
+    </Router>);

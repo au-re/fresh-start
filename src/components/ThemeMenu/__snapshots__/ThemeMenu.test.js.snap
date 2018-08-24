@@ -1,14 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThemeMenu renders without props 1`] = `
+.c1 {
+  min-width: 120px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 .c0 {
-  z-index: 10;
-  padding: 20px;
-  background: transparent;
+  border-left: 1px solid;
+  padding: 0 24px;
+  margin: 0 24px;
+  display: inline-block;
 }
 
 <div
   className="c0"
   style={undefined}
-/>
+>
+  <div
+    className="c1"
+    onClick={[Function]}
+  />
+</div>
 `;

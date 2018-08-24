@@ -1,5 +1,5 @@
 export default {
-  projectName: "fresh-start",
+  projectName: "refresh",
   company: "Acme Inc",
   copyrightNotice: "© 2018 ",
 };

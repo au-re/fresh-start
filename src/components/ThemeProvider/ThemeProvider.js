@@ -2,16 +2,19 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { ThemeProvider as Provider } from "styled-components";
 
-import pop from "../themes/pop";
-import random from "../themes/random";
+// TODO: move to component library
 
 /* adds a function to set the theme on top of styled components themeprovider */
 
 class ThemeProvider extends Component {
 
   state = {
-    themes: [pop, random],
-    selectedTheme: pop,
+    themes: this.props.themes,
+    selectedTheme: this.props.themes[0],
+  }
+
+  static defaultProps = {
+    themes: [{}],
   }
 
   static childContextTypes = {
@@ -38,12 +41,12 @@ class ThemeProvider extends Component {
 
 /* wrapper for any component that wishes to set the theme */
 
-const themeWrapper = (ComponentToWrap) => class extends Component {
+const withTheme = (ComponentToWrap) => class extends Component {
 
   static contextTypes = {
-    themes: PropTypes.array,
-    setTheme: PropTypes.func,
-    selectedTheme: PropTypes.object,
+    themes: PropTypes.array.isRequired,
+    setTheme: PropTypes.func.isRequired,
+    selectedTheme: PropTypes.object.isRequired,
   }
 
   render() {
@@ -57,4 +60,4 @@ const themeWrapper = (ComponentToWrap) => class extends Component {
 };
 
 export default ThemeProvider;
-export { themeWrapper };
+export { withTheme };

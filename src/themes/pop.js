@@ -1,11 +1,18 @@
-const palette = {
+const greys = ["#F5F5F5", "#E8E8E8", "#BFBFBF", "#8C8C8C", "#424242", "#303030"];
+
+const colors = {
   primary: "cornflowerblue",
   secondary: "tomato",
-  greys: ["#F5F5F5", "#E8E8E8", "#BFBFBF", "#8C8C8C", "#424242", "#303030"],
   info: "skyblue",
   danger: "tomato",
   warning: "orangered",
   success: "olivedrab",
+  greys,
+};
+
+const text = {
+  primary: greys[5],
+  secondary: greys[4],
 };
 
 const shadows = [
@@ -17,34 +24,32 @@ const shadows = [
 ];
 
 const fonts = {
-  headline: "Nunito, sans-serif",
-  text: "Lato, sans-serif",
+  headline: "Lato, sans-serif",
+  default: "Lato, sans-serif",
   code: "Consolas, Liberation Mono, Menlo, Courier, monospace",
+};
+
+// blends are component level styles that need to be globaly themeable
+const blends = {
+
+  // name of the component
+  landing: {
+
+    // stylable properties of component
+    background: "sandybrown",
+    backgroundIntro: "coral",
+    color: "white",
+  },
+  themeMenu: {
+    color: "white",
+  },
 };
 
 export default ({
   name: "pop",
-  palette,
+  colors,
+  text,
   shadows,
   fonts,
-  blends: {
-    menu: {
-      text: "white",
-    },
-    grid: {
-      primary: "lightseagreen",
-      accent: "lavender",
-      text: "white",
-    },
-    todos: {
-      primary: "tomato",
-      accent: "salmon",
-      text: "white",
-    },
-    landing: {
-      primary: "sandybrown",
-      accent: "coral",
-      text: "white",
-    },
-  },
+  blends,
 });

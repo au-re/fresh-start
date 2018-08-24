@@ -2,7 +2,9 @@
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-> Add styled-components, routing, storybook and a sensible project structure to the [create-react-app]() boilerplate.
+> Add styled-components, routing, storybook and a sensible project structure to the [create-react-app](https://github.com/facebook/create-react-app) boilerplate.
+
+View it live [here]().
 
 ## Tech Stack
 
@@ -21,8 +23,6 @@ You will need the following software installed on your machine:
 
 We recomend installing **node** throught [nvm](https://github.com/creationix/nvm), as well as
 updating [npm](https://www.npmjs.com/) to version >=5.
-
-**NOTE**: this repo was only tested on **linux**.
 
 ## Getting started
 
@@ -48,11 +48,14 @@ cd <my-project>
 npm i
 ```
 
-Now, you can have a look at the boilerplate application:
+Once the dependencies are installed, you can launch the development environment and have a look at the boilerplate application:
 
 ```sh
 npm run start
 ```
+
+This will launch the webpack dev server for you and automatically sync your browser. You can now
+view the website on [localhost:3000](http://localhost:3000).
 
 ## Scripts
 
