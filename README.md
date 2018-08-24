@@ -1,10 +1,11 @@
-# Fresh Start
+# Refresh Template - React App
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-> Add styled-components, routing, storybook and a sensible project structure to the [create-react-app](https://github.com/facebook/create-react-app) boilerplate.
+> Add styled-components, routing, storybook and a sensible project structure to the
+[create-react-app](https://github.com/facebook/create-react-app) boilerplate.
 
-View it live [here]().
+View it live [here](https://au-re.github.io/refresh-template-project/).
 
 ## Tech Stack
 

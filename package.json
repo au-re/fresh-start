@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "description": "Add styled-components, routing, storybook and a sensible project structure to the create-react-app boilerplate.",
-  "homepage": "https://au-re.github.io/fresh-start/",
+  "homepage": "https://au-re.github.io/refresh-template-project/",
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
     "start": "react-app-rewired start",
