@@ -43,7 +43,6 @@
     }
   },
   "devDependencies": {
-    "react-app-rewire-less": "^2.1.2",
     "react-app-rewired": "^1.5.2",
     "@storybook/addon-info": "^3.4.6",
     "@storybook/addon-links": "^3.4.6",
